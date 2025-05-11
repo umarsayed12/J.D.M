@@ -63,7 +63,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="min-h-screen bg-[#003f88] p-8 pt-16 flex flex-col justify-center items-center"
+      className="min-h-screen bg-[#003f88] p-8 flex flex-col justify-center items-center md:pt-[7%] pt-[20%]"
     >
       <h2 className="text-5xl text-white font-extrabold mb-8 text-center w-full">
         Our Services

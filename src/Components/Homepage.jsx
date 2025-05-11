@@ -9,7 +9,7 @@ export default function Homepage() {
   return (
     <section
       id="homepage"
-      className="min-h-screen bg-[#00509d] flex flex-col md:flex-row justify-center items-center text-white p-16"
+      className="min-h-screen bg-[#00509d] flex flex-col md:flex-row justify-center items-center text-white p-16 pt-[30%] sm:pt-[10%]"
     >
       <div className="md:w-1/2 flex flex-col justify-center items-center text-center md:items-start md:text-start">
         <h1 className="text-5xl md:text-7xl font-extrabold mb-4">

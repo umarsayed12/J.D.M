@@ -57,7 +57,7 @@ function ContactUs() {
   return (
     <section
       id="contactus"
-      className="min-h-screen bg-[#003f88] p-8 text-white pt-16"
+      className="min-h-screen bg-[#003f88] p-8 text-white pt-[20%] md:pt-[7%]"
     >
       <h2 className="text-5xl font-extrabold mb-8 text-center w-full">
         Contact Us

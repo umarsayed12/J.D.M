@@ -53,7 +53,7 @@ export default function AboutUs() {
     <section
       id="aboutus"
       ref={sectionRef}
-      className="min-h-screen bg-[#003f88] flex flex-col justify-center items-center text-white p-6 md:p-16"
+      className="min-h-screen bg-[#003f88] flex flex-col justify-center items-center text-white p-6 md:p-16 md:pt-[7%] pt-[20%]"
     >
       {/* Heading centered at the top for all screen sizes */}
       <h2 className="text-5xl font-extrabold mb-8 text-center md:text-start w-full">

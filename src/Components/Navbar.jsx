@@ -15,7 +15,13 @@ export default function Navbar() {
 
   return (
     <nav className="fixed w-full bg-[#00296b] text-white p-4 flex justify-between items-center shadow-lg z-50">
-      <div className="text-2xl font-bold">J.D.M.</div>
+      <div className="text-2xl font-bold w-[40%]">
+        <img
+          src="/JDMLOGO.png"
+          alt="jdmLogo"
+          className="md:ml-8 w-[30%] sm:w-[10%]"
+        />
+      </div>
       <div className="hidden md:flex space-x-6">
         <button
           onClick={() => handleScroll("homepage")}

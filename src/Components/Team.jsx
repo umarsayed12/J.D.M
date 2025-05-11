@@ -19,7 +19,7 @@ export default function Team() {
   return (
     <section
       id="team"
-      className="min-h-screen bg-[#00509d] flex flex-col justify-center items-center text-white p-6 pt-16 md:p-16"
+      className="min-h-screen bg-[#00509d] flex flex-col justify-center items-center text-white p-6 md:p-16 pt-[20%]"
     >
       <h2 className="text-5xl font-extrabold mb-16 text-center">
         Meet Our Team
