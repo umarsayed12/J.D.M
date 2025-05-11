@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import AboutImage from "../../public/aboutus.webp"; // Replace with actual path
+// import AboutImage from "../../public/aboutus.webp"; // Replace with actual path
 
 export default function AboutUs() {
   const [servicesCount, setServicesCount] = useState(0);
@@ -64,7 +64,7 @@ export default function AboutUs() {
       <div className="md:hidden flex flex-col items-center">
         <div className="mb-6 flex justify-center items-center">
           <img
-            src={AboutImage}
+            src="/aboutus.webp"
             alt="About J.D.M."
             className="w-[50%] max-w-md rounded-2xl shadow-lg"
           />
@@ -117,7 +117,7 @@ export default function AboutUs() {
           </div>
           <div className="w-1/2 flex justify-end items-center">
             <img
-              src={AboutImage}
+              src="/aboutus.webp"
               alt="About J.D.M."
               className="w-full max-w-md rounded-2xl shadow-lg"
             />

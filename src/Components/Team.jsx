@@ -1,18 +1,18 @@
 import React from "react";
-import Person1 from "../../public/jabed_ali.jpg"; // Replace with actual path
-import Person2 from "../../public/md_israr.jpg"; // Replace with actual path
+// import Person1 from "../../public/jabed_ali.jpg"; // Replace with actual path
+// import Person2 from "../../public/md_israr.jpg"; // Replace with actual path
 
 export default function Team() {
   const teamMembers = [
     {
       name: "Jabed Ali",
       role: "CEO",
-      image: Person1,
+      image: "/jabed_ali.jpg",
     },
     {
       name: "Md. Israr",
       role: "Admin Executive",
-      image: Person2,
+      image: "/md_israr.jpg",
     },
   ];
 

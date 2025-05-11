@@ -1,21 +1,57 @@
-import React from "react";
-import emailjs from "emailjs-com";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 function ContactUs() {
+  const form = useRef();
+  const emailjsServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const emailjsTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const emailjsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState("");
+  const [timestamp, setTimestamp] = useState("");
+
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm("service_id", "template_id", e.target, "user_id").then(
-      (result) => {
-        console.log(result.text);
-        alert("Message sent successfully!");
-      },
-      (error) => {
-        console.log(error.text);
-        alert("Failed to send message.");
-      }
-    );
-    e.target.reset();
+    // Set the current time in ISO or custom format
+    const currentTime = new Date().toLocaleString("en-IN", {
+      timeZone: "Asia/Kolkata",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+    });
+
+    setTimestamp(currentTime);
+
+    // Add a slight delay to ensure timestamp state is updated before sending
+    setTimeout(() => {
+      emailjs
+        .sendForm(emailjsServiceId, emailjsTemplateId, form.current, {
+          publicKey: emailjsPublicKey,
+        })
+        .then(
+          () => {
+            setName("");
+            setEmail("");
+            setPhone("");
+            setMessage("");
+            setSuccess(
+              "Message sent successfully! We’ll get back to you soon."
+            );
+          },
+          (error) => {
+            console.error("FAILED...", error.text);
+            setSuccess("Failed to send message. Please try again later.");
+          }
+        );
+    }, 100); // 100ms delay ensures timestamp is set
   };
 
   return (
@@ -23,11 +59,12 @@ function ContactUs() {
       id="contactus"
       className="min-h-screen bg-[#003f88] p-8 text-white pt-16"
     >
-      <h2 className="text-5xl text-white font-extrabold mb-8 text-center w-full">
+      <h2 className="text-5xl font-extrabold mb-8 text-center w-full">
         Contact Us
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <form
+          ref={form}
           onSubmit={sendEmail}
           className="bg-[#00509d] p-8 rounded-2xl shadow-lg space-y-4 text-black"
         >
@@ -36,6 +73,8 @@ function ContactUs() {
             name="user_name"
             placeholder="Full Name"
             className="w-full p-4 rounded-md"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             required
           />
           <input
@@ -43,6 +82,8 @@ function ContactUs() {
             name="user_email"
             placeholder="Email"
             className="w-full p-4 rounded-md"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
           <input
@@ -50,6 +91,8 @@ function ContactUs() {
             name="user_phone"
             placeholder="Phone Number"
             className="w-full p-4 rounded-md"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             required
           />
           <textarea
@@ -57,11 +100,18 @@ function ContactUs() {
             placeholder="Message"
             className="w-full p-4 rounded-md"
             rows="4"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             required
           ></textarea>
+
+          {/* Hidden input for timestamp */}
+          <input type="hidden" name="timestamp" value={timestamp} />
+
+          {success && <p className="text-green-500 font-medium">{success}</p>}
           <button
             type="submit"
-            className="bg-[#fdc500] w-full p-4 rounded-md text-[#00509d] font-bold hover:bg-[#ffd500]"
+            className="bg-[#fdc500] w-full p-4 rounded-md text-[#00509d] font-bold hover:bg-[#ffd500] transition-all duration-300"
           >
             Send Message
           </button>
@@ -72,6 +122,9 @@ function ContactUs() {
           <p>
             Vill. Begampur Main Road, Near Primary School, Greater Noida, Gautam
             Budh Nagar (U.P.) 201306
+          </p>
+          <p>
+            GSTIN: <span className="text-[#fdc500]">09AVLPB6604M1ZB</span>
           </p>
           <p>
             Phone:{" "}

@@ -1,5 +1,5 @@
 import React from "react";
-import HeroImage from "../../public/office_image.jpg"; // Replace with actual path
+// import HeroImage from "../../public/office_image.jpg"; // Replace with actual path
 
 export default function Homepage() {
   const handleScroll = (id) => {
@@ -19,7 +19,7 @@ export default function Homepage() {
         </h1>
         <div className="md:w-1/2 md:hidden justify-end items-center mt-6 mb-6 md:mb-0">
           <img
-            src={HeroImage}
+            src="/office_image.jpg"
             alt="Engineering Works"
             className="w-full max-w-md rounded-2xl shadow-lg"
           />
@@ -45,7 +45,7 @@ export default function Homepage() {
 
       <div className="md:w-1/2 hidden md:flex justify-end items-center mt-6 mb-6 md:mb-0">
         <img
-          src={HeroImage}
+          src="/office_image.jpg"
           alt="Engineering Works"
           className="w-full max-w-md rounded-2xl shadow-lg"
         />
