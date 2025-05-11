@@ -81,7 +81,7 @@ const companies = [
     id: 12,
     name: "OM Tower, Alpha-1",
     description: "Commercial Complex",
-    image: "public/om_tower.png",
+    image: "/om_tower.png",
   },
 ];
 
