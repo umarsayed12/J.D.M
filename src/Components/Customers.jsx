@@ -85,7 +85,7 @@ export default function Customers() {
         {companies.map((company) => (
           <div
             key={company.id}
-            className="bg-[#003f88] p-8 rounded-2xl shadow-lg flex flex-col cursor-pointer items-center justify-center hover:shadow-2xl transition-shadow duration-300"
+            className="bg-[#003f88] p-8 hover:scale-110 rounded-2xl shadow-lg flex flex-col cursor-pointer items-center justify-center hover:shadow-3xl transition-all duration-300"
           >
             <img
               src={company.image}

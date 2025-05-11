@@ -147,12 +147,12 @@ function ContactUs() {
           </p>
 
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.0069757552783!2d77.4615588!3d28.503763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDMwJzEzLjYiTiA3N8KwMjcnbjIwLjEiRQ!5e0!3m2!1sen!2sin!4v1610000000000!5m2!1sen!2sin"
-            width="100%"
-            height="300"
-            style={{ border: 0 }}
-            allowFullScreen=""
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3137.739142452514!2d77.45879588519661!3d28.50379191625764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce9000b266f27%3A0x93425bb9eabbc398!2sMS%20JDM%20ENGINEERING%20WORKS!5e0!3m2!1sen!2sin!4v1746974571541!5m2!1sen!2sin"
+            // style={"border:0;"}
+            className="w-[100%] md:h-[55%] border-0 rounded-lg"
+            allowfullscreen=""
             loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
       </div>

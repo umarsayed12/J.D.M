@@ -28,7 +28,7 @@ export default function Team() {
         {teamMembers.map((member, index) => (
           <div
             key={index}
-            className="bg-[#003f88] p-8 rounded-2xl shadow-lg flex flex-col items-center max-w-sm"
+            className="bg-[#003f88] p-8 rounded-2xl hover:shadow-2xl cursor-pointer hover:scale-105 transition-all duration-300 shadow-lg flex flex-col items-center max-w-sm"
           >
             <img
               src={member.image}
